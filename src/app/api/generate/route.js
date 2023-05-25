@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"; //NextResponse nos permite devolver 
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 if (!configuration.apiKey) throw new Error("No API key provided");
 const openai = new OpenAIApi(configuration);
